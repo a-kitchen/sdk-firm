@@ -20,9 +20,9 @@
 
 SDK 目标硬件最低要求
 
-* Cortext M0，主频 43 M-Hz
-* RAM 16 K-Byte
-* ROM/flash 128 M-Byte
+* Cortext M0，主频 48-MHz
+* RAM 16-KByte
+* ROM/flash 128-MByte
 * Bluetooth Smart (BLE 4.0)
 
 可选的部分硬件功能
