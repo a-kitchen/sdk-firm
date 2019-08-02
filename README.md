@@ -37,5 +37,5 @@ SDK 目标硬件最低要求
 
 目前 SDK 已经在如下嵌入式处理器系统上调试运行成功
 
-* CyPress PSoc 4
+* Cypress PSoc 4
 * Telink 8267
