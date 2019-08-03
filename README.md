@@ -54,6 +54,11 @@ SDK 目标硬件最低要求
 
 其中用到的函数简单介绍如下
 
+* Ak_GetErrcode	-- 获取 SDK 系统错误码
+* Ak_GetFlags -- 获取 SDK 系统标志
+* Ak_GetMode --  -- 获取 SDK 系统模式
+* Ak_GetParam16	-- 获取 16 位 SDK 系统参数
+* Ak_GetPower -- 获取 SDK 功率指令
 * Ak_OnBeat -- SDK 系统心跳定时，要求调用频率为 10 - 20Hz
 * Ak_OnClock -- SDK 系统秒时钟定时，要求调用频率为 1Hz
 * Ak_OnIdle -- SDK 系统空闲操作时间片，要求至少每 10mS 调用一次
