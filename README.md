@@ -145,7 +145,7 @@ int main(void) {
     }
     if(SCB_SpiUartGetRxBufferSize())                // 获取上行数据
       Recv(SCB_SpiUartReadRxData());                // 解析数据
-	Ak_OnIdle();                                    // 空闲操作时间片
+    Ak_OnIdle();                                    // 空闲操作时间片
   }
 }
 ```
