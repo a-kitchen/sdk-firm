@@ -51,8 +51,8 @@ SDK 目标硬件最低要求
 #include <project.h>
 #include <ak.h>
 
-#define	LEN	0                                       // 数据帧长度占位符
-#define	SUM	0                                       // 数据帧校验和占位符
+#define	LEN 0                                       // 数据帧长度占位符
+#define	SUM 0                                       // 数据帧校验和占位符
 
 #define	DISP_BEAT	0x01
 #define	DISP_CLOCK	0x02
