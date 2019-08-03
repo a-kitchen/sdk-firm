@@ -63,7 +63,25 @@ SDK 目标硬件最低要求
 * akfirm/allinone.c -- 集成控制示例代码源文件
 * akfirm/passthrough.c -- 数据透传示例代码源文件
 
+## 接口说明
+
+点击进入
+
 ## 透传示例
+
+这个示例的目标系统通过 UART 串行接口与独立控制器通信。
+
+上行数据 (独立控制器到透传目标系统) 内容
+
+* 错误码
+* 系统模式
+* 温度值
+
+下行数据 (透传目标系统到独立控制器) 内容
+
+* 系统模式
+* 功率指令
+* 外设指令
 
 其中用到的函数简单介绍如下
 
@@ -76,6 +94,7 @@ SDK 目标硬件最低要求
 * Ak_OnClock -- SDK 系统秒时钟定时，要求调用频率为 1Hz
 * Ak_OnIdle -- SDK 系统空闲操作时间片，要求至少每 10mS 调用一次
 * Ak_Prepare -- 准备 OTA 参数
+* Ak_SetParam08	-- 设置 8 位 SDK 系统参数
 * Ak_Start -- SDK 引擎初始化，设置系统回调
 * SCB_SpiUartGetRxBufferSize -- 获取串口接收数据长度
 * SCB_SpiUartReadRxData -- 读取串口接收数据
