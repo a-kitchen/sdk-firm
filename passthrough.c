@@ -12,7 +12,7 @@ static U32 clock;
 static U08 disp;
 static U08 param;
 
-static void Callback(U08 key) {
+static void Callback(U08 key) {                     // 系统回调
   param = key;
 }
 
@@ -78,7 +78,7 @@ int main(void) {
   CyGlobalIntEnable;                                // 系统初始化
   Clock_Start();                                    // 时钟初始化
   SCB_Start();                                      // 串口初始化
-  Ak_Start(Callback);                               // 启动引擎
+  Ak_Start(Callback);                               // 启动引擎，设置系统回调
 
   for(;;) {
     if (disp & DISP_BEAT) {                         // 心跳，16 次/秒
