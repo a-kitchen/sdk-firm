@@ -52,6 +52,18 @@ SDK 目标硬件最低要求
 
 ## 透传示例
 
+其中用到的函数简单介绍如下
+
+* Ak_OnBeat -- SDK 系统心跳定时，要求调用频率为 10 - 20Hz
+* Ak_OnClock -- SDK 系统秒时钟定时，要求调用频率为 1Hz
+* Ak_OnIdle -- SDK 系统空闲操作时间片，要求至少每 10mS 调用一次
+* Ak_Prepare -- 准备 OTA 参数
+* Ak_Start -- SDK 引擎初始化，设置系统回调
+* SCB_SpiUartGetRxBufferSize -- 获取串口接收数据长度
+* SCB_SpiUartReadRxData -- 读取串口接收数据
+* SCB_SpiUartPutArray -- 发送数据至串口
+* SCB_Start -- 串口初始化
+
 ```c
 #include <project.h>
 #include <ak.h>
@@ -67,7 +79,7 @@ static U32 clock;
 static U08 disp;
 static U08 param;
 
-static void Callback(U08 key) {
+static void Callback(U08 key) {                     // 系统回调
   param = key;
 }
 
@@ -133,7 +145,7 @@ int main(void) {
   CyGlobalIntEnable;                                // 系统初始化
   Clock_Start();                                    // 时钟初始化
   SCB_Start();                                      // 串口初始化
-  Ak_Start(Callback);                               // 启动引擎
+  Ak_Start(Callback);                               // 启动引擎，设置系统回调
 
   for(;;) {
     if (disp & DISP_BEAT) {                         // 心跳，16 次/秒
